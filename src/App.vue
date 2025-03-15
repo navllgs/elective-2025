@@ -1,9 +1,10 @@
 <script>
 import Box from "./components/Box.vue";
+import Form from "./components/Form.vue";
 
 export default {
   components: {
-    Box,
+    Box, Form
   },
 
   data() {
@@ -12,6 +13,7 @@ export default {
         { text: "Home", path: "/" },
         { text: "Calendar", path: "/calendar" },
         { text: "About", path: "/about" },
+        { text: "Login", path: "/login" },
       ]
     };
   },
@@ -28,15 +30,12 @@ export default {
 <template>
   <div style="width: 100%; height: 100vh; position: relative; ">
 
-    <!-- header -->
     <header style="position: fixed; top: 0; left: 0; right: 0; background-color: aqua;">
       header
     </header>
-    <!-- header end -->
 
     <div style="display: flex; margin-bottom: 60px; margin-top: 60px;">
 
-      <!-- left navigation -->
       <nav style="width: 200px; background-color: bisque;">
 
         <div @click="goTo(route.path)" class="pointer" style="margin: 20px 10px; background-color: #eee; padding: 10px;"
@@ -44,21 +43,16 @@ export default {
           {{ route.text }}</div>
 
       </nav>
-      <!-- left navigation end -->
 
-      <!-- main content -->
       <div style="flex-grow: 1; background-color: #fff; overflow-y: auto; height: calc(100vh - 120px); padding: 10px;">
         <RouterView></RouterView>
       </div>
-      <!-- main content end -->
 
     </div>
 
-    <!-- footer -->
     <footer style="position: fixed; bottom: 0; left: 0; right: 0; background-color: cadetblue;">
       footer
     </footer>
-    <!-- footer end -->
 
   </div>
 </template>

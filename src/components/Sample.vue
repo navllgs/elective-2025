@@ -4,6 +4,7 @@
     <p>Computed Message: {{ computedMessage }}</p>
     <button @click="incrementCounter">Increment</button>
     <p>Counter: {{ counter }}</p>
+    {{ content }}
   </div>
 </template>
 
@@ -16,6 +17,10 @@ export default {
     initialCounter: {
       type: Number,
       default: 0
+    },
+    content: {
+      type: String,
+      default: 'Hello world'
     }
   },
 
@@ -45,6 +50,9 @@ export default {
   watch: {
     counter(newVal, oldVal) {
       console.log(`Counter changed from ${oldVal} to ${newVal}`);
+    },
+    updateTitle(){
+      this.title = 'New title'
     }
   },
 
@@ -98,5 +106,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

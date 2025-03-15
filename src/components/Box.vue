@@ -1,7 +1,12 @@
 <template>
   <!-- html -->
-   <div class="cell">
-    {{ text }}
+   <div>
+     <div class="cell">
+      {{ textData }}
+     </div>
+     <div>
+      <button @click="changeText('text here...')">change text</button>
+     </div>
    </div>
 </template>
 
@@ -11,6 +16,19 @@ export default {
   props: {
     text: {
       type: String
+    }
+  },
+
+  data() {
+    return {
+      // data
+      textData: this.text
+    }
+  },
+
+  methods: {
+    changeText(textParams){
+      this.textData = textParams
     }
   }
 }
